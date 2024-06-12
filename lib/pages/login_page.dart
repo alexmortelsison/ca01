@@ -1,5 +1,6 @@
 import 'package:ca01/components/my_button.dart';
 import 'package:ca01/components/my_textfield.dart';
+import 'package:ca01/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -12,7 +13,25 @@ class LoginPage extends StatelessWidget {
     required this.onTap,
   });
 
-  void login() {}
+  void login(BuildContext context) async {
+    final AuthService authService = AuthService();
+
+    try {
+      await authService.signInWithEmailAndPassword(
+        _emailController.text,
+        _passwordController.text,
+      );
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(
+            e.toString(),
+          ),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +69,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 25),
             MyButton(
               text: 'Login',
-              onTap: login,
+              onTap: () => login(context),
             ),
             const SizedBox(height: 25),
             Row(
