@@ -4,7 +4,7 @@ import 'package:ca01/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  void Function()? onTap;
+  final void Function()? onTap;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
