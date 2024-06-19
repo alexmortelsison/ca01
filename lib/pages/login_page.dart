@@ -1,6 +1,6 @@
 import 'package:ca01/components/my_button.dart';
 import 'package:ca01/components/my_textfield.dart';
-import 'package:ca01/auth/auth_service.dart';
+import 'package:ca01/services/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {

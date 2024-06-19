@@ -1,5 +1,5 @@
-import 'package:ca01/auth/auth_gate.dart';
-import 'package:ca01/auth/login_or_register.dart';
+import 'package:ca01/services/auth/auth_gate.dart';
+import 'package:ca01/services/auth/login_or_register.dart';
 import 'package:ca01/firebase_options.dart';
 
 import 'package:ca01/themes/lightmode.dart';

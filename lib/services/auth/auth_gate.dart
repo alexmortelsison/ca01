@@ -1,4 +1,4 @@
-import 'package:ca01/auth/login_or_register.dart';
+import 'package:ca01/services/auth/login_or_register.dart';
 import 'package:ca01/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
