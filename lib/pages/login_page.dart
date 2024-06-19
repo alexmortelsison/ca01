@@ -8,10 +8,7 @@ class LoginPage extends StatelessWidget {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  LoginPage({
-    super.key,
-    required this.onTap,
-  });
+  LoginPage({super.key, required this.onTap});
 
   void login(BuildContext context) async {
     final AuthService authService = AuthService();
