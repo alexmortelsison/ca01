@@ -14,9 +14,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: const MyDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        foregroundColor: Colors.grey,
         title: const Text('Home'),
       ),
       body: _buildUserList(),
