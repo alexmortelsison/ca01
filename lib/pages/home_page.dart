@@ -3,6 +3,9 @@ import 'package:ca01/components/my_drawer.dart';
 import 'package:ca01/services/chat/chat_service.dart';
 import 'package:flutter/material.dart';
 
+import '../components/user_tile.dart';
+import 'chat_page.dart';
+
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
@@ -33,7 +36,9 @@ class HomePage extends StatelessWidget {
         }
         return ListView(
           children: snapshot.data!
-              .map<Widget>((userData) => _buildUserListItem)
+              .map<Widget>(
+                (userData) => _buildUserListItem(userData, context),
+              )
               .toList(),
         );
       },
@@ -42,6 +47,18 @@ class HomePage extends StatelessWidget {
 
   Widget _buildUserListItem(
       Map<String, dynamic> userData, BuildContext context) {
-    return UserTile();
+    return UserTile(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChatPage(
+              receiverEmail: userData['email'],
+            ),
+          ),
+        );
+      },
+      text: userData['email'],
+    );
   }
 }
